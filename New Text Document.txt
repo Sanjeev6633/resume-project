@@ -1,0 +1,84 @@
+Here is a starter React frontend code for the described Resume Analyzer app with two tabs: Upload Resume and Past Resumes.
+
+
+Build a Frontend UI and an API in python (Flask or FastAPI or Django) which inputs a resume and has 2 tabs:
+First tab: User can upload a new resume and backend extracts information from resume like skills, work experience, all key important fields, store them in a database (postgres). Have a LLM analyze the resume and suggest points to improve. Also suggest more relevant skills to learn and upskill. The API should return the following info in JSON format, and the frontend UI should display it nicely in a structured UI. Use Gemini free tier APIs with Langchain.
+
+API output example (just for reference, the implementation expectation is to be more detailed and nuanced):
+
+{
+  "name": "...",
+  "email": "...",
+  "core_skills": ["java", "react"],
+  "soft_skills": ["hardworking", "team player"],
+  "resume_rating": 8,
+  "improvement_areas": "...",
+  "upskill_suggestions": "..."
+}
+
+	Think and come up with as much structured data to extract as possible so that no info from resume is missed. Save it in a db (postgres) Display it in a neat minimal UI.
+Second tab, show all past uploaded resume (db rows) in a neat table showing key features extracted like uploaded file name, person's name, email, phone etc. and a "Details" button. Clicking on Details on any row, should open a modal and show the extracted content in the same UI as the first tab (when a resume is uploaded for first time). First tab is live, second tab becomes historical data viewing.
+Any sample pdf resumes could be downloaded which are publicly available to test. Test it on your own resume as well.
+Tech Stacks:
+Frontend: React
+Backend: Python (Flask / FastAPI / Django)
+Database: Sqlite
+LLM: Gemini free tier APIs
+
+Submission and evaluation criteria:
+Mandatory criteria:
+Submission via github repo.
+Includes screenshots of the all UI pages
+sample_data/ folder must contain sample resumes the application was tested on.
+Use either Gemini free tier or any other open source locally running LLM
+Evaluation would be on the basis of:
+Quality of code written, modularity, readability, well documented (not over documented by AI).
+Edge cases, error handling etc
+Quality & accuracy of extracted data, minimized hallucinations
+Ability to extract as much information as possible
+sample_data and screenshots displaying the parser running on a variety of resume formats
+Upskill_suggestions: prompt optimization for Depth of upskilling suggestions (are they too generic, vs on point for the given resume)
+Neat UI
+
+
+
+
+
+It includes:
+
+Tab navigation with React state
+
+Resume upload form with file input
+
+Display of extracted JSON response nicely formatted (placeholder data)
+
+Past resumes table with a modal to show details (UI only, mock data)
+
+Basic CSS for minimal, clean UI
+
+This can later connect to the backend APIs for real data.
+
+
+
+Usage notes:
+
+
+The upload form currently simulates an API call with a timeout and returns mock data.
+
+Replace the handleUpload function to call actual backend API endpoint to upload and get resume parsed results.
+
+Past resumes are held in React state with mock sample datasets; replace with real backend fetch once backend API ready.
+
+Modal opens to show detailed extracted resume data for any past upload.
+
+Clean, minimal inline styles included. Can be replaced with CSS or UI library as needed.
+
+This frontend is a solid baseline fulfilling your requirements on UI structure, clarity, and functionality for resume upload, data display, and history viewing.
+
+If wanted, can provide backend starter code next or assist in integrating LLM API calls. Just ask!
+
+
+
+
+
+
